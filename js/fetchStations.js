@@ -22,7 +22,7 @@ function fetchStation(lon,lat){
     }).then(object => {
         let x = 0;
         while (x < object.timeSeries.length){
-            console.log(object);    
+            createElements(object, x);    
          x++;
         };
     });
