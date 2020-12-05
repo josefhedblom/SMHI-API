@@ -8,10 +8,22 @@ function fetchStations(input) {
         while (x < object.station.length){
             const {name, latitude, longitude} = object.station[x];
             if(name === input ) {
-                console.log(longitude,latitude);
+                fetchStation(longitude,latitude);
             }
             x++;
         };
     });
 };
 
+function fetchStation(lon,lat){
+    fetch(`https://opendata-download-metfcst.smhi.se/api/category/pmp3g/version/2/geotype/point/lon/${lon}/lat/${lat}/data.json`)
+    .then(response => {
+        return response.json();
+    }).then(object => {
+        let x = 0;
+        while (x < object.timeSeries.length){
+            console.log(object);    
+         x++;
+        };
+    });
+};
