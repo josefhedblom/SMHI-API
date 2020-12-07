@@ -2,7 +2,7 @@ let container = document.querySelector('.container');
 function createElements(object,x){
     const {parameters, name, values, validTime} = object.timeSeries[x];
 
-    if(validTime.includes("T00:00:00Z")) {
+    if(validTime.includes("T12:00:00Z")) {
         let time                  = document.createElement('h5');
         let temperatur            = document.createElement('li');
         let windSpeed             = document.createElement('li');
@@ -18,8 +18,8 @@ function createElements(object,x){
         weatherDiv.setAttribute('class','weather');
         timeDiv.setAttribute('class', 'time');
         parametersDiv.setAttribute('class','parameters');
-
-        time.innerHTML                    = validTime.replace(("T00:00:00Z"),'');
+        
+        time.innerHTML                    = validTime.replace(("T12:00:00Z"),'');
         temperatur.innerHTML              = parseInt(parameters[1].values);
         windSpeed.innerHTML               = parseInt(parameters[4].values);
         airPressure.innerHTML             = parseFloat(parameters[0].values);
