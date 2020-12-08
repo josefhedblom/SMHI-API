@@ -20,12 +20,12 @@ function createElements(object,x){
         parametersDiv.setAttribute('class','parameters');
         
         time.innerHTML                    = validTime.replace(("T12:00:00Z"),'');
-        temperatur.innerHTML              = parseInt(parameters[1].values);
+        temperatur.innerHTML              = Math.ceil(parseFloat(parameters[1].values));
         windSpeed.innerHTML               = parseInt(parameters[4].values);
         airPressure.innerHTML             = parseFloat(parameters[0].values);
         thunderPrediction.innerHTML       = parseFloat(parameters[6].values);
-        precipitation.innerHTML           = parseFloat(parameters[16].values);
-        weatherSymbol.innerHTML           = getWeatherSymbol(parseFloat(parameters[18].values));
+        precipitation.innerHTML           = Math.round(parseFloat(parameters[16].values));
+        weatherSymbol.innerHTML           = getWeatherSymbol(parseInt(parameters[18].values));
 
         //Append li to ul
         ul.appendChild(temperatur);
