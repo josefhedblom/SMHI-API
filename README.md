@@ -12,7 +12,7 @@ Ett enklet sätt att hämta data från SMHI API.
 - Lufttryck
 - Riska för åska/blixt
 - Nedebörd
-- Vädersymbol
+- Vädersymbol [0-27]
 
 
 ## Ändra på paramterna:
