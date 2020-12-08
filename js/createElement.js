@@ -25,7 +25,7 @@ function createElements(object,x){
         airPressure.innerHTML             = parseFloat(parameters[0].values);
         thunderPrediction.innerHTML       = parseFloat(parameters[6].values);
         precipitation.innerHTML           = parseFloat(parameters[16].values);
-        weatherSymbol.innerHTML           = parseFloat(parameters[18].values);
+        weatherSymbol.innerHTML           = getWeatherSymbol(parseFloat(parameters[18].values));
 
         //Append li to ul
         ul.appendChild(temperatur);
